@@ -3365,6 +3365,26 @@ input, select, textarea {
     .view-text {
         font-size: 1rem;
     }
+	@media (max-width: 768px) {
+    /* Ajustes para el header */
+    #header .inner h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+    
+    #header .inner h3 {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    #header .inner h3 br {
+        display: none; /* Oculta saltos de línea forzados */
+    }
+}
 }
 
 	}
