@@ -3307,5 +3307,64 @@ input, select, textarea {
 				margin-left: 0;
 				padding-left: 0;
 			}
+		/* ==================== */
+/* RESPONSIVE PARA MOBILE */
+/* ==================== */
+@media (max-width: 768px) {
+    
+    /* Contenedor principal */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Artículos individuales */
+    .portfolio-item {
+        margin-bottom: 1.5rem;
+        border-radius: 6px;
+    }
+
+    /* Ajuste de thumbnail */
+    .portfolio-thumbnail {
+        height: 180px; /* Altura reducida */
+    }
+
+    /* Contenido textual */
+    .portfolio-content {
+        padding: 1.2rem;
+    }
+
+    /* Títulos */
+    .portfolio-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Tags de tecnologías */
+    .tech-tags {
+        margin: 0.5rem 0;
+    }
+    
+    .tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    /* Botones */
+    .button.small {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    /* Efecto overlay en mobile */
+    .overlay {
+        opacity: 0.9; /* Visible por defecto en mobile */
+        background: rgba(74, 202, 168, 0.9);
+    }
+    
+    .view-text {
+        font-size: 1rem;
+    }
+}
 
 	}
