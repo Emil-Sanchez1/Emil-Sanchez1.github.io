@@ -3334,5 +3334,19 @@ input, select, textarea {
 }
 }
 }
+/* Estilos para Desktop */
+@media screen and (min-width: 769px) {
+    #header .inner h3 span:nth-child(1) {  /* Selecciona solo el primer span (Licenciatura) */
+        display: inline !important;       /* Fuerza que permanezca en línea */
+        white-space: nowrap !important;   /* Evita el salto de línea */
+    }
+}
+
+/* Estilos para Mobile (mantén los que ya funcionan) */
+@media screen and (max-width: 768px) {
+    #header .inner h3 span {
+        display: block !important;  /* Cada span en su propia línea */
+    }
+}
 
 	}
