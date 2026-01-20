@@ -3372,30 +3372,3 @@ input, select, textarea {
 }
 
 	}
-
-/* Corrección para centrar el Header de Emil */
-#header .inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-}
-
-#header .image.avatar {
-    margin: 0 auto 1.5em auto !important;
-    float: none !important;
-    display: block;
-}
-
-#header h1 {
-    width: 100%;
-    text-align: center !important;
-    margin-bottom: 0.5em;
-}
-
-#header h3 {
-    width: 100%;
-    text-align: center !important;
-}
