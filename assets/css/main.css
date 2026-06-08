@@ -1934,7 +1934,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #49bf9d;
+			border-color: #2563eb;
 		}
 
 	select {
@@ -1988,7 +1988,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #a2a2a2;
+			color: #64748b;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2039,7 +2039,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #49bf9d;
+			border-color: #2563eb;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2557,7 +2557,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			border-color: #49bf9d;
+			border-color: #2563eb;
 			color: #49bf9d !important;
 		}
 
@@ -2566,7 +2566,7 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:active {
 			background-color: rgba(73, 191, 157, 0.1);
-			border-color: #49bf9d;
+			border-color: #2563eb;
 			color: #49bf9d !important;
 		}
 
@@ -3402,4 +3402,43 @@ body,#main { background:#f8fafc; }
 .button{
     border-radius:12px;
     font-weight:600;
+}
+
+
+/* ===== MODERN PORTFOLIO OVERRIDES ===== */
+body,#main{background:#f8fafc;}
+#main>section{border-top:1px solid #e2e8f0;}
+#header{
+background-image:linear-gradient(135deg,#0f172a,#1e293b)!important;
+}
+.image.avatar{
+box-shadow:0 0 0 6px rgba(255,255,255,.08),0 15px 35px rgba(0,0,0,.30);
+}
+.portfolio-item{
+background:#fff;
+border-radius:18px;
+border:1px solid #e2e8f0;
+box-shadow:0 10px 25px rgba(15,23,42,.06);
+transition:transform .35s ease,box-shadow .35s ease;
+}
+.portfolio-item:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(15,23,42,.12);
+}
+.overlay{background:rgba(37,99,235,.85);}
+.tag{
+background:#eff6ff;
+color:#2563eb;
+border:1px solid #bfdbfe;
+font-weight:600;
+}
+.button.primary,
+input[type="submit"].primary{
+background:#2563eb;
+border-color:#2563eb;
+}
+.button.primary:hover,
+input[type="submit"].primary:hover{
+background:#1d4ed8;
+border-color:#1d4ed8;
 }
