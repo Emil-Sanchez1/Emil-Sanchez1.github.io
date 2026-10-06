@@ -1,550 +1,327 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<!-- Favicon -->
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		
-		<title>Emil Sánchez | Data Analytics </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emil Sánchez | Analista de Datos y BI</title>
+<meta name="description" content="Analista de datos y Business Intelligence con formación en ciencias políticas. Reportes, dashboards, modelos de datos y análisis con SQL, Python, Power BI y Data Studio.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Emil Sánchez | Analista de Datos y BI">
+<meta property="og:description" content="Analista de datos y Business Intelligence con formación en ciencias políticas. Reportes, dashboards, modelos de datos y análisis con SQL, Python, Power BI y Data Studio.">
+<meta property="og:image" content="https://emil-sanchez1.github.io/images/avatar.jpg">
+<meta property="og:url" content="https://emil-sanchez1.github.io/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: cabecera fija, hero en dos columnas con retrato, proyectos como filas alternadas (imagen + caso), habilidades en rejilla y contacto. */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --fg:#0f1b2d; --muted:#53627a; --line:#d9dee7;
+  --accent:#2447e0; --accent-fg:#ffffff; --accent-soft:#e3e9fc; --ink:#0f1b2d; --ink-fg:#f5f6f8;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Hanken Grotesk','Segoe UI',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1220; --surface:#121b2e; --fg:#e8ecf4; --muted:#9aa8c2; --line:#223049;
+  --accent:#7d97ff; --accent-fg:#0b1220; --accent-soft:#18254a; --ink:#e8ecf4; --ink-fg:#0b1220; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1220; --surface:#121b2e; --fg:#e8ecf4; --muted:#9aa8c2; --line:#223049;
+  --accent:#7d97ff; --accent-fg:#0b1220; --accent-soft:#18254a; --ink:#e8ecf4; --ink-fg:#0b1220; color-scheme:dark}
 
-		<!-- Header -->
-		<header id="header">
-   			<div class="inner" style="text-align: center">
-        		<a href="#" class="image avatar"><img src="images/avatar.jpg" alt=""/></a>
-        		 <h1><strong>Emil Sánchez</strong></h1>
-				<h3>
-					<span>Data analytics</span><br />
-					<span>Business intelligence</span><br />
-					<span>Politólogo</span><br />
-				</h3>
-   			 </div>
-		</header>
+*{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.65}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.08}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
-		
-			<!--<header id="header">
-				<div class="inner" style="text-align: center">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1 style="color: #ffffff"><strong>Emil Sánchez</strong></h1>
-        				<h3 style="color: rgba(255, 255, 255, 0.8)">Lic. Ciencias Políticas<br />
-					    Analista de Datos<br />
-        				    Business Intelligence</h3>
-				</div>
-			</header>-->
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--display);font-weight:800;text-decoration:none;font-size:1.05rem}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav li a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;font-size:.92rem;font-weight:500;color:var(--muted)}
+.nav li a:hover{color:var(--fg);background:var(--accent-soft)}
 
-		<!-- Main -->
-			<div id="main">
+/* hero */
+.hero{padding-block:72px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+h1{font-size:clamp(2.5rem,6.4vw,4.6rem);font-weight:800;letter-spacing:-.03em}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:1.2rem;color:var(--muted);max-width:52ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:8px;border:1.5px solid var(--fg);font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.btn.s{border-color:var(--line);background:var(--surface)}
+.portrait{position:relative;justify-self:end;width:100%;max-width:340px}
+.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:14px;filter:saturate(.9)}
+.portrait::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:14px;z-index:-1}
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>PERFIL PROFESIONAL</h2>
-						</header>
-						<p style="text-align: justify; text-justify: inter-word;">Licenciado en ciencias políticas y administrativas con amplia experiencia en el área de Data Analytics y Business Intelligence. Capacitado como analista de datos con habilidades en transformación de datos crudos en insights accionables, elaboración de dashboard responsive e interactivo, entendimiento de negocio, bases de datos, modelado de datos, procesos ETL, machine learning, estadística. Cuento con más de dos años de experiencia en el área de datos, lo que me ha dotado con excelentes capacidades y aptitudes para abordar proyectos de diferentes ámbitos y convertir datos en respuestas claras y objetivas.</p>
-						<a 
-   							 href="https://www.linkedin.com/in/emil-sanchez/" 
-  							  class="button icon brands fa-linkedin"
-   							 target="_blank"
-						>
-    								Linkedin
-						</a>
-						<a 
-   							 href="https://drive.google.com/file/d/1c1bWwY_Cw851Scq22Y7E4vrrbzJhVcFQ/view?usp=drive_link" 
-  							  class="button icon solid fa-certificate"
-   							 target="_blank"
-						>
-    								Certificaciones
-						</a>
-						<a 
-   							 href="https://forms.gle/UFEKFCRbHT13bseF6" 
-  							  class="button icon solid fa-file-alt"
-   							 target="_blank"
-						>
-    								Solicitar CV
-						</a>
-						
-					</section>
+/* sections */
+section.blk{padding-block:72px;border-top:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:40px;max-width:60ch}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em}
 
-<!-- SECCIÓN PORTAFOLIO -->
-<section id="portfolio">
-    <h2>PORTAFOLIO</h2>
-    <div class="portfolio-grid">
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p{color:var(--muted)}
+.about p+p{margin-top:14px}
+.about strong{color:var(--fg);font-weight:600}
+.areas{display:flex;flex-direction:column;gap:12px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.areas .tags span{font-size:.8rem;padding:5px 12px}
+.pull{font-family:var(--display);font-size:1.5rem;font-weight:500;line-height:1.3;letter-spacing:-.01em;text-wrap:balance}
 
-<!-- ARTÍCULO 1 - SQL + Power BI -->
-        <article class="portfolio-item">
-            <div class="portfolio-thumbnail">
-                <a href="https://drive.google.com/file/d/1MNdjipZfJRkiVTIs_3Mz3dB9StjqrLf3/view?usp=sharing" target="_blank">
-                    <img src="images/PortadaSQLPowerBI.jpg"
-                         alt="Proyecto SQL + Power BI" 
-                         class="thumbnail-image">
-                    <div class="overlay">
-                        <span class="view-text">Ver Proyecto</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-content">
-                <h3>Análisis de datos - MySQL + Power BI</h3>
-                <div class="tech-tags">
-                    <span class="tag">MySQL</span>
-                    <span class="tag">Power BI</span>
-                    <span class="tag">Draw.io</span>
-		    <span class="tag">Pandas</span>
-                </div>
-                <p>Análisis descriptivo de datos referentes a pedidos de clientes con bases cronológicas por día, mes y año.</p>
-                <a href="https://drive.google.com/file/d/1MNdjipZfJRkiVTIs_3Mz3dB9StjqrLf3/view?usp=drive_link" 
-                   target="_blank" 
-                   class="button small">
-                   Ver PDF
-                </a>
-		<a href="https://drive.google.com/file/d/1ME0LPbE8JZi8OSbnnx71KcI9zlfgDOp3/view?usp=sharing" 
-                   target="_blank" 
-                   class="button small">
-                   VideoDemo
-                </a>
-		<a href="https://drive.google.com/file/d/1ENZXvFOOqzCg3P-ACK-CmH2Q0LuWrkQK/view?usp=sharing" 
-                   target="_blank" 
-                   class="button small">
-                   Descargar archivos
-                </a>
-            </div>
-        </article>
-	    
-<!-- ARTÍCULO 2 - Análisis de datos - Python -->
-        <article class="portfolio-item">
-            <div class="portfolio-thumbnail">
-                <a href="https://drive.google.com/file/d/1GIYOF39xrmBabUPNakK7N1BTlUV-xiDH/view?usp=sharing" target="_blank">
-                    <img src="images/PPAD.jpg"
-                         alt="Análisis de datos - Python" 
-                         class="thumbnail-image">
-                    <div class="overlay">
-                        <span class="view-text">Ver Proyecto</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-content">
-                <h3>Análisis de datos - Python</h3>
-                <div class="tech-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Jupyter Notebook</span>
-                    <span class="tag">Pandas</span>
-		    <span class="tag">Numpy</span>
-		    <span class="tag">Matplotlib</span>
-		    <span class="tag">Seaborn</span>
-                </div>
-                <p>Análisis de comportamiento de clientes e-commerce: Variación de métodos de pago por edad y otros puntos clave.</p>
-                <a href="https://drive.google.com/file/d/1GIYOF39xrmBabUPNakK7N1BTlUV-xiDH/view?usp=sharing" 
-                   target="_blank" 
-                   class="button small">
-                   Ver PDF
-                </a>
-		<a href="https://drive.google.com/file/d/1OVXnOw6vhp19jkqVFc_oEPwokm4V7flT/view?usp=sharing" 
-                   target="_blank" 
-                   class="button small">
-                   Descargar code y DB
-                </a>
-            </div>
-        </article>
+/* projects */
+.projects{display:flex;flex-direction:column;gap:56px}
+.proj{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.proj:nth-child(even) .shot{order:2}
+.shot{display:block;position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface);min-width:0}
+.shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform .4s}
+.shot:hover img{transform:scale(1.03)}
+.shot span{position:absolute;right:12px;bottom:12px;background:var(--ink);color:var(--ink-fg);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:6px}
+.case{display:flex;flex-direction:column;gap:16px;min-width:0}
+.case h3{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;letter-spacing:-.015em}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-family:var(--mono);font-size:.72rem;padding:3px 9px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.cs{display:grid;grid-template-columns:96px 1fr;gap:10px 14px;margin:0;font-size:.97rem}
+.cs dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.cs dd{margin:0}
+.cs dd.todo{color:var(--muted);font-style:italic;border:1px dashed var(--line);border-radius:6px;padding:6px 10px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.links a{font-weight:600;font-size:.92rem;text-decoration:none;padding:8px 14px;border-radius:7px;border:1.5px solid var(--line);background:var(--surface)}
+.links a.main{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.links a:hover{border-color:var(--accent)}
 
- <!-- ARTÍCULO 3 - DASHBOARD Looker Studio -->
-        <article class="portfolio-item">
-            <div class="portfolio-thumbnail">
-                <a href="https://drive.google.com/file/d/1hvqjm-GyKgjcAGdyfUjaq1duAfDatxXS/view?usp=drive_link" target="_blank">
-                    <img src="images/Dashboard_potenciarsolidario.jpg" 
-                         alt="Dashboard Fundación Potenciar Solidario" 
-                         class="thumbnail-image">
-                    <div class="overlay">
-                        <span class="view-text">Ver Proyecto</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-content">
-                <h3>Dashboard Interactivo - Looker Studio</h3>
-                <div class="tech-tags">
-                    <span class="tag">Looker Studio</span>
-                    <span class="tag">ETL</span>
-                    <span class="tag">KPIs</span>
-                </div>
-                <p>Dashboard ejecutivo con análisis de donaciones y proveedores para Fundación Potenciar Solidario.</p>
-		<a href="https://drive.google.com/file/d/1hvqjm-GyKgjcAGdyfUjaq1duAfDatxXS/view?usp=drive_link" 
-                   target="_blank" 
-                   class="button small">
-                   Ver PDF
-                </a>
+/* skills */
+.cloud{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.cloud li{font-size:.98rem;font-weight:500;padding:8px 16px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+/* contact */
+.contact{background:var(--ink);color:var(--ink-fg);border-radius:18px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.contact h2{color:var(--ink-fg)}
+.contact p{opacity:.8;max-width:46ch;margin-top:12px}
+.contact .stack{display:flex;flex-direction:column;gap:12px}
+.contact a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-radius:10px;border:1.5px solid color-mix(in srgb,var(--ink-fg) 28%,transparent);text-decoration:none;font-weight:600}
+.contact a:hover{background:color-mix(in srgb,var(--ink-fg) 12%,transparent)}
+.contact .lbl{display:inline-flex;align-items:center;gap:10px}
+.contact a.main{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.contact a small{font-family:var(--mono);font-size:.72rem;opacity:.75;font-weight:400}
+footer{padding-block:32px 48px;font-size:.88rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
 
-            </div>
-        </article>
-	  
+@media (max-width:860px){
+  .hero .wrap,.about,.proj,.contact{grid-template-columns:1fr}
+  .hero .wrap{gap:40px}
+  .portrait{justify-self:start;max-width:260px;margin-right:14px}
+  .proj:nth-child(even) .shot{order:0}
+  .nav li:nth-child(n+4){display:none}
+}
+@media (max-width:520px){
+  .nav li a{padding:8px 8px}
+  .cs{grid-template-columns:1fr;gap:2px}
+  .cs dd{margin-bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.shot img{transition:none}}
+</style>
 
+</head>
+<body>
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Emil Sánchez</a>
+    <ul>
+      <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Analista de datos · Business Intelligence · Politólogo</span>
+      <h1>Convierto datos crudos en <em>respuestas claras</em>.</h1>
+      <p class="lede">Licenciado en Ciencias Políticas y Administrativas, con más de 3 años trabajando con datos. Construyo reportes, dashboards interactivos, modelos de datos y análisis que ayudan a organizaciones a decidir con evidencia, con el formato que cada caso necesite.</p>
+      <div class="actions">
+        <a class="btn p" href="#proyectos">Ver proyectos</a>
+        <a class="btn s" href="https://forms.gle/UFEKFCRbHT13bseF6" target="_blank" rel="noopener">Solicitar CV</a>
+        <a class="btn s" href="https://www.linkedin.com/in/emil-sanchez/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+      </div>
     </div>
+    <div class="portrait">
+      <img src="images/avatar.jpg" alt="Retrato de Emil Sánchez con traje" width="340" height="425">
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="blk" id="perfil">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Perfil</span>
+      <h2>Datos con contexto</h2>
+    </div>
+    <div class="about">
+      <p class="pull">Entiendo el negocio antes de abrir el editor: qué se decide, quién decide y qué cifra le sirve.</p>
+      <div>
+        <p>Mi formación en ciencias políticas me da una forma distinta de leer los datos: <strong>entiendo el contexto del negocio, defino las métricas correctas y comunico los hallazgos con claridad</strong>, además de tablas y gráficos.</p>
+        <p>Trabajo el ciclo completo: <strong>ETL, modelado de datos, bases de datos y estadística</strong>, hasta el dashboard responsive que usa el equipo.</p>
+        <p>He trabajado con datos en <strong>distintos tipos de organizaciones</strong>, desde marketing hasta procesos operativos.</p>
+      </div>
+    </div>
+    <div class="areas">
+      <span class="eyebrow">Áreas donde he trabajado</span>
+      <div class="tags"><span>Marketing</span><span>KPIs y dashboards</span><span>Reportería</span><span>Retención (Email y SMS)</span><span>Automatización BI</span></div>
+    </div>
+  </div>
 </section>
 
-				<!-- Three -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
+<section class="blk" id="proyectos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Portafolio</span>
+      <h2>Proyectos</h2>
+    </div>
+    <div class="projects">
 
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
+      <article class="proj">
+        <a class="shot" href="https://drive.google.com/file/d/1MNdjipZfJRkiVTIs_3Mz3dB9StjqrLf3/view?usp=sharing" target="_blank" rel="noopener" aria-label="Abrir proyecto MySQL y Power BI">
+          <img src="images/PortadaSQLPowerBI.jpg" alt="Portada del proyecto de análisis de pedidos con MySQL y Power BI" loading="lazy">
+          <span>Ver proyecto ↗</span>
+        </a>
+        <div class="case">
+          <h3>Análisis de pedidos de clientes</h3>
+          <div class="tags"><span>MySQL</span><span>Power BI</span><span>Pandas</span><span>Draw.io</span></div>
+          <dl class="cs">
+            <dt>Problema</dt><dd>Entender cómo se distribuyen los pedidos de clientes en el tiempo.</dd>
+            <dt>Qué hice</dt><dd>Modelé la base en MySQL, la procesé con Pandas y armé el análisis descriptivo por día, mes y año en Power BI.</dd>
+            <dt>Resultado</dt><dd>Convertí un CSV en un modelo relacional en estrella (tabla de hechos y 3 dimensiones) en MySQL, conectado a un dashboard de Power BI con filtros por año y mes y gráficos de ventas por línea de producto, estado de pedido y país.</dd>
+          </dl>
+          <div class="links">
+            <a class="main" href="https://drive.google.com/file/d/1MNdjipZfJRkiVTIs_3Mz3dB9StjqrLf3/view?usp=sharing" target="_blank" rel="noopener">Ver informe</a>
+            <a href="https://drive.google.com/file/d/1ME0LPbE8JZi8OSbnnx71KcI9zlfgDOp3/view?usp=sharing" target="_blank" rel="noopener">Video demo</a>
+            <a href="https://drive.google.com/file/d/1ENZXvFOOqzCg3P-ACK-CmH2Q0LuWrkQK/view?usp=sharing" target="_blank" rel="noopener">Archivos</a>
+          </div>
+        </div>
+      </article>
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+      <article class="proj">
+        <a class="shot" href="https://drive.google.com/file/d/1GIYOF39xrmBabUPNakK7N1BTlUV-xiDH/view?usp=sharing" target="_blank" rel="noopener" aria-label="Abrir proyecto de análisis en Python">
+          <img src="images/PPAD.jpg" alt="Portada del análisis de comportamiento de clientes en Python" loading="lazy">
+          <span>Ver proyecto ↗</span>
+        </a>
+        <div class="case">
+          <h3>Comportamiento de clientes en e-commerce</h3>
+          <div class="tags"><span>Python</span><span>Jupyter</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span></div>
+          <dl class="cs">
+            <dt>Problema</dt><dd>Saber si los métodos de pago cambian según la edad del cliente.</dd>
+            <dt>Qué hice</dt><dd>Limpié y exploré los datos en Jupyter y visualicé los patrones con Matplotlib y Seaborn.</dd>
+            <dt>Resultado</dt><dd>Los clientes de 26 a 35 años prefieren PayPal (25 %), mientras que los de 18-25 y 36-45 hacen las compras de mayor importe. El 65 % de las compras viene de móviles y tablets. Recomendé una encuesta para entender el método "otros" y envíos gratis por PayPal para fidelizar a los de 26-35.</dd>
+          </dl>
+          <div class="links">
+            <a class="main" href="https://drive.google.com/file/d/1GIYOF39xrmBabUPNakK7N1BTlUV-xiDH/view?usp=sharing" target="_blank" rel="noopener">Ver informe</a>
+            <a href="https://drive.google.com/file/d/1OVXnOw6vhp19jkqVFc_oEPwokm4V7flT/view?usp=sharing" target="_blank" rel="noopener">Código y datos</a>
+          </div>
+        </div>
+      </article>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
+      <article class="proj">
+        <a class="shot" href="https://drive.google.com/file/d/1hvqjm-GyKgjcAGdyfUjaq1duAfDatxXS/view?usp=drive_link" target="_blank" rel="noopener" aria-label="Abrir dashboard de Fundación Potenciar Solidario">
+          <img src="images/Dashboard_potenciarsolidario.jpg" alt="Dashboard ejecutivo de donaciones y proveedores de Fundación Potenciar Solidario" loading="lazy">
+          <span>Ver proyecto ↗</span>
+        </a>
+        <div class="case">
+          <h3>Dashboard de donaciones y proveedores</h3>
+          <div class="tags"><span>Data Studio</span><span>ETL</span><span>KPIs</span></div>
+          <dl class="cs">
+            <dt>Contexto</dt><dd>Práctica profesional con datos de la Fundación Potenciar Solidario, dentro del programa de la academia Guayerd.</dd>
+            <dt>Qué hice</dt><dd>Transformé los datos crudos en información clara y construí un dashboard ejecutivo e interactivo en Data Studio, con KPIs de donaciones y proveedores.</dd>
+            <dt>Resultado</dt><dd>Proyecto concluido con éxito y certificado por la academia.</dd>
+          </dl>
+          <div class="links">
+            <a class="main" href="https://drive.google.com/file/d/1hvqjm-GyKgjcAGdyfUjaq1duAfDatxXS/view?usp=drive_link" target="_blank" rel="noopener">Ver dashboard</a>
+          </div>
+        </div>
+      </article>
 
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+    </div>
+  </div>
+</section>
 
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
+<section class="blk" id="habilidades">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Herramientas</span>
+      <h2>Habilidades</h2>
+    </div>
+    <ul class="cloud">
+      <li>SQL</li>
+      <li>Python</li>
+      <li>Power BI</li>
+      <li>Data Studio</li>
+      <li>Excel</li>
+      <li>Google Sheets</li>
+      <li>Tableau</li>
+      <li>Metabase</li>
+      <li>Procesos ETL</li>
+      <li>Modelado de datos</li>
+      <li>Power Query</li>
+      <li>Pandas</li>
+      <li>NumPy</li>
+      <li>Jupyter Notebook</li>
+      <li>Matplotlib</li>
+      <li>Seaborn</li>
+      <li>Estadística</li>
+      <li>KPIs</li>
+      <li>Reportes ejecutivos</li>
+      <li>Dashboards responsive</li>
+      <li>Draw.io</li>
+      <li>Claude Code</li>
+      <li>ChatGPT</li>
+      <li>DeepSeek</li>
+      <li>Google AI Studio</li>
+      <li>Notion</li>
+      <li>MS Office</li>
+      <li>LibreOffice</li>
+      <li>Metodologías ágiles</li>
+      <li>Coordinación y liderazgo</li>
+    </ul>
+  </div>
+</section>
 
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
+<section class="blk" id="contacto">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <span class="eyebrow" style="color:inherit;opacity:.7">Contacto</span>
+        <h2 style="margin-top:10px">¿Tienes datos que necesitan una respuesta?</h2>
+        <p>Mi trayectoria detallada está en mi CV. Pídelo con el formulario o escríbeme por LinkedIn y te lo envío.</p>
+      </div>
+      <div class="stack">
+        <a class="main" href="https://www.linkedin.com/in/emil-sanchez/" target="_blank" rel="noopener"><span class="lbl"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</span> <small>emil-sanchez ↗</small></a>
+        <a href="https://forms.gle/UFEKFCRbHT13bseF6" target="_blank" rel="noopener">Solicitar CV <small>formulario ↗</small></a>
+        <a href="https://drive.google.com/file/d/1c1bWwY_Cw851Scq22Y7E4vrrbzJhVcFQ/view?usp=drive_link" target="_blank" rel="noopener">Certificaciones <small>Drive ↗</small></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
-
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
-
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
-
-					</section>
-				-->
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/emil-sanchez/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					</ul>
-					<ul class="copyright">
-   					 <li>&copy; Emil Sánchez - 2026</li>
-   					 <li>Analista de Datos - Business Intelligence</li>
-   					 <!-- Crédito  al template -->
-   					 <li>Template: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-						</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<footer>
+  <div class="wrap">
+    <span>© Emil Sánchez · 2026</span>
+    <span>Analista de Datos · Business Intelligence</span>
+  </div>
+</footer>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
