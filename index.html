@@ -117,17 +117,75 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em}
 footer{padding-block:32px 48px;font-size:.88rem;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
 
+/* elementos solo para móvil: ocultos en escritorio */
+.menu-btn,.m-id,.brand .short{display:none}
+
+/* ===== Versión móvil (el escritorio no se toca) ===== */
 @media (max-width:860px){
-  .hero .wrap,.about,.proj,.contact{grid-template-columns:1fr}
-  .hero .wrap{gap:40px}
-  .portrait{justify-self:start;max-width:260px;margin-right:14px}
+  body{font-size:16px}
+  .wrap{padding-inline:20px}
+
+  /* menú compacto con botón */
+  .nav .wrap{height:56px}
+  .brand .full{display:none}
+  .brand .short{display:inline}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;padding:0}
+  .menu-btn .ic-close{display:none}
+  .menu-btn[aria-expanded="true"] .ic-open{display:none}
+  .menu-btn[aria-expanded="true"] .ic-close{display:block}
+  .nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:8px 20px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .nav ul.open{display:flex}
+  .nav li a{padding:14px 8px;font-size:1.05rem;border-radius:8px}
+
+  /* inicio: foto redonda y nombre arriba */
+  .hero{padding-block:28px 40px}
+  .hero .wrap{grid-template-columns:1fr;gap:24px}
+  .portrait{display:none}
+  .m-id{display:flex;align-items:center;gap:16px}
+  .m-id img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid var(--accent);flex:none}
+  .m-id div{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .m-id b{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .m-id span{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+  .hero-copy{gap:18px}
+  .hero-copy>.eyebrow{display:none}
+  h1{font-size:2.15rem}
+  .lede{font-size:1.05rem}
+  .desk-only{display:none}
+
+  /* botones: principal a todo el ancho, dos secundarios lado a lado */
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:2px}
+  .actions .btn{justify-content:center;min-height:50px;padding:12px 10px}
+  .actions .btn.p{grid-column:1/-1}
+
+  /* secciones */
+  section.blk{padding-block:48px}
+  .sec-head{margin-bottom:24px}
+  h2{font-size:1.75rem}
+  .about,.contact{grid-template-columns:1fr}
+  .about{gap:20px}
+  .pull{font-size:1.25rem}
+  .areas{margin-top:28px;padding-top:22px}
+
+  /* proyectos */
+  .projects{gap:44px}
+  .proj{grid-template-columns:1fr;gap:20px;align-items:start}
   .proj:nth-child(even) .shot{order:0}
-  .nav li:nth-child(n+4){display:none}
-}
-@media (max-width:520px){
-  .nav li a{padding:8px 8px}
-  .cs{grid-template-columns:1fr;gap:2px}
+  .case{gap:14px}
+  .case h3{font-size:1.4rem}
+  .cs{grid-template-columns:1fr;gap:2px;font-size:.95rem}
   .cs dd{margin-bottom:10px}
+  .links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .links a{text-align:center;padding:13px 10px}
+  .links a.main,.links a:nth-child(2):last-child{grid-column:1/-1}
+
+  /* habilidades */
+  .cloud{gap:8px}
+  .cloud li{font-size:.9rem;padding:6px 12px}
+
+  /* contacto */
+  .contact{padding:24px;gap:20px;border-radius:16px}
+  .contact a{min-height:52px}
+  footer .wrap{flex-direction:column}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.shot img{transition:none}}
 </style>
@@ -136,8 +194,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <body>
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="brand" href="#inicio">Emil Sánchez</a>
-    <ul>
+    <a class="brand" href="#inicio"><span class="full">Emil Sánchez</span><span class="short">Emil S.</span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <svg class="ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ic-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <ul id="menu">
       <li><a href="#perfil">Perfil</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
@@ -148,10 +210,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 
 <header class="hero" id="inicio">
   <div class="wrap">
+    <div class="m-id">
+      <img src="images/avatar.jpg" alt="Retrato de Emil Sánchez con traje" width="84" height="84">
+      <div><b>Emil Sánchez</b><span>Analista de datos · BI · Politólogo</span></div>
+    </div>
     <div class="hero-copy">
       <span class="eyebrow">Analista de datos · Business Intelligence · Politólogo</span>
       <h1>Convierto datos crudos en <em>respuestas claras</em>.</h1>
-      <p class="lede">Licenciado en Ciencias Políticas y Administrativas, con más de 3 años trabajando con datos. Construyo reportes, dashboards interactivos, modelos de datos y análisis que ayudan a organizaciones a decidir con evidencia, con el formato que cada caso necesite.</p>
+      <p class="lede">Licenciado en Ciencias Políticas y Administrativas, con más de 3 años trabajando con datos. Construyo reportes, dashboards interactivos, modelos de datos y análisis que ayudan a organizaciones a decidir con evidencia<span class="desk-only">, con el formato que cada caso necesite</span>.</p>
       <div class="actions">
         <a class="btn p" href="#proyectos">Ver proyectos</a>
         <a class="btn s" href="https://forms.gle/UFEKFCRbHT13bseF6" target="_blank" rel="noopener">Solicitar CV</a>
@@ -323,5 +389,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <span>Analista de Datos · Business Intelligence</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var btn=document.getElementById("menuBtn"),menu=document.getElementById("menu");
+  if(!btn||!menu)return;
+  function set(open){
+    menu.classList.toggle("open",open);
+    btn.setAttribute("aria-expanded",open?"true":"false");
+    btn.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");
+  }
+  btn.addEventListener("click",function(){set(btn.getAttribute("aria-expanded")!=="true")});
+  menu.addEventListener("click",function(e){if(e.target.closest("a"))set(false)});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)});
+})();
+</script>
 </body>
 </html>
