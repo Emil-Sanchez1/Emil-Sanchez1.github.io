@@ -118,7 +118,7 @@ footer{padding-block:32px 48px;font-size:.88rem;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
 
 /* elementos solo para móvil: ocultos en escritorio */
-.menu-btn,.m-id,.brand .short{display:none}
+.menu-btn,.m-id,.brand .short,.cloud-more{display:none}
 
 /* ===== Versión móvil (el escritorio no se toca) ===== */
 @media (max-width:860px){
@@ -145,7 +145,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   .m-id img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid var(--accent);flex:none}
   .m-id div{display:flex;flex-direction:column;gap:4px;min-width:0}
   .m-id b{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
-  .m-id span{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+  .m-id span{font-family:var(--mono);font-size:min(.7rem,calc((100vw - 144px)/23.5));letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.5;white-space:nowrap}
   .hero-copy{gap:18px}
   .hero-copy>.eyebrow{display:none}
   h1{font-size:2.15rem}
@@ -179,8 +179,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   .links a.main,.links a:nth-child(2):last-child{grid-column:1/-1}
 
   /* habilidades */
-  .cloud{gap:8px}
-  .cloud li{font-size:.9rem;padding:6px 12px}
+  .cloud{gap:6px}
+  .cloud li{font-size:.82rem;padding:4px 11px}
+  .cloud li.more{display:none}
+  .cloud.open li.more{display:block}
+  .cloud-more{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:48px;margin-top:16px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-weight:600;font-size:.95rem;cursor:pointer}
+  .cloud-more:hover{border-color:var(--accent)}
 
   /* contacto */
   .contact{padding:24px;gap:20px;border-radius:16px}
@@ -330,7 +334,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
       <span class="eyebrow">Herramientas</span>
       <h2>Habilidades</h2>
     </div>
-    <ul class="cloud">
+    <ul class="cloud" id="cloud">
       <li>SQL</li>
       <li>Python</li>
       <li>Power BI</li>
@@ -342,26 +346,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
       <li>Procesos ETL</li>
       <li>Modelado de datos</li>
       <li>Power Query</li>
-      <li>Pandas</li>
-      <li>NumPy</li>
-      <li>Jupyter Notebook</li>
-      <li>Matplotlib</li>
-      <li>Seaborn</li>
-      <li>Estadística</li>
+      <li class="more">Pandas</li>
+      <li class="more">NumPy</li>
+      <li class="more">Jupyter Notebook</li>
+      <li class="more">Matplotlib</li>
+      <li class="more">Seaborn</li>
+      <li class="more">Estadística</li>
       <li>KPIs</li>
-      <li>Reportes ejecutivos</li>
-      <li>Dashboards responsive</li>
-      <li>Draw.io</li>
-      <li>Claude Code</li>
-      <li>ChatGPT</li>
-      <li>DeepSeek</li>
-      <li>Google AI Studio</li>
-      <li>Notion</li>
-      <li>MS Office</li>
-      <li>LibreOffice</li>
-      <li>Metodologías ágiles</li>
-      <li>Coordinación y liderazgo</li>
+      <li class="more">Reportes ejecutivos</li>
+      <li class="more">Dashboards responsive</li>
+      <li class="more">Draw.io</li>
+      <li class="more">Claude Code</li>
+      <li class="more">ChatGPT</li>
+      <li class="more">DeepSeek</li>
+      <li class="more">Google AI Studio</li>
+      <li class="more">Notion</li>
+      <li class="more">MS Office</li>
+      <li class="more">LibreOffice</li>
+      <li class="more">Metodologías ágiles</li>
+      <li class="more">Coordinación y liderazgo</li>
     </ul>
+    <button class="cloud-more" id="cloudMore" type="button" aria-expanded="false" aria-controls="cloud">Ver todas (30)</button>
   </div>
 </section>
 
@@ -402,6 +407,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   btn.addEventListener("click",function(){set(btn.getAttribute("aria-expanded")!=="true")});
   menu.addEventListener("click",function(e){if(e.target.closest("a"))set(false)});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)});
+
+  var cloud=document.getElementById("cloud"),more=document.getElementById("cloudMore");
+  if(cloud&&more){
+    more.addEventListener("click",function(){
+      var open=cloud.classList.toggle("open");
+      more.setAttribute("aria-expanded",open?"true":"false");
+      more.textContent=open?"Ver menos":"Ver todas (30)";
+    });
+  }
 })();
 </script>
 </body>
